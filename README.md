@@ -25,8 +25,8 @@ The project integrates **Arduino, Python, and MATLAB** for real-time 3D motion t
 - Performs **sensor calibration** by applying offsets to raw accelerometer data.
 - Sends **adjusted accelerometer & gyroscope values** via **serial port**.
 
-**Arduino Code Example:**  
-![Arduino Code](https://github.com/user-attachments/assets/afaeff0e-e748-4c4c-ae5e-efe99eb0fa25)
+
+![Arduino Connection Diagram](https://github.com/user-attachments/assets/afaeff0e-e748-4c4c-ae5e-efe99eb0fa25)
 
 ---
 
