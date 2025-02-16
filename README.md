@@ -54,4 +54,3 @@ The **MATLAB script** processes raw sensor data to estimate the **3D position** 
 
 ---
 
-## 📂 **Project Structure**
