@@ -1,55 +1,57 @@
-3D Position Tracking using MPU9250 IMU (Inertial Measurement Unit):
-The MPU9250 is a popular 9-axis motion tracking device that integrates:
-3-axis Gyroscope: Measures the rate of rotation (angular velocity) around the x, y, and z axes.
-3-axis Accelerometer: Measures acceleration in three directions, useful for detecting linear movement and orientation.
-3-axis Magnetometer: Measures magnetic fields along the x, y, and z axes, providing compass-like functionality and enhancing orientation sensing.
-Key Features:
-9 Degrees of Freedom (DoF): Combines data from the gyroscope, accelerometer, and magnetometer to provide precise orientation and motion tracking.
-Digital Motion Processor (DMP): On-chip algorithms process sensor data for features like sensor fusion, which simplifies obtaining orientation (pitch, roll, yaw).
-![image](https://github.com/user-attachments/assets/fe995a2d-018e-439b-8422-4bd9270df85b)
+# 3D Position Tracking using MPU9250 IMU
 
-Implemenation of Codes:
+## Overview
+This project utilizes the **MPU9250** Inertial Measurement Unit (IMU) to perform **3D position tracking** by integrating accelerometer, gyroscope, and magnetometer data. The data is processed using **Arduino, Python, and MATLAB** to track motion and estimate orientation in real time.
 
-The project implementation includes the use of Arduino, Python, and MATLAB for 3D position
-tracking using the MPU9250 sensor, processing its accelerometer, gyroscope, and magnetometer
-data to track motion and orientation in real-time. The integration of the three platforms allows for
-precise data acquisition and processing as detailed below:
-1. Arduino Code: The Arduino code is used to interface with the MPU9250 and collect motion data.
-The code handles sensor calibration by applying offsets to the raw accelerometer data and then
-prints out the adjusted accelerometer and gyroscope values in a comma-separated format. This
-data is then passed to the serial port for further processing in Python.
+## Components of MPU9250
+The **MPU9250** is a 9-axis motion tracking device that integrates:
+- **3-Axis Gyroscope**: Measures angular velocity (rotation rate) around the x, y, and z axes.
+- **3-Axis Accelerometer**: Measures acceleration, useful for detecting linear movement and orientation.
+- **3-Axis Magnetometer**: Measures magnetic fields, providing compass-like functionality to enhance orientation sensing.
 
-![image](https://github.com/user-attachments/assets/afaeff0e-e748-4c4c-ae5e-efe99eb0fa25)
+### 🔹 Key Features
+✔ **9 Degrees of Freedom (DoF)** – Combines gyroscope, accelerometer, and magnetometer data for precise motion tracking.  
+✔ **Digital Motion Processor (DMP)** – Built-in sensor fusion algorithms simplify obtaining orientation (pitch, roll, yaw).  
 
+![MPU9250](https://github.com/user-attachments/assets/fe995a2d-018e-439b-8422-4bd9270df85b)
 
-2. Python Code: The Python script reads real-time data from the serial port and stores it in a CSV
-file. This data contains the readings from the MPU9250’s accelerometer and gyroscope, which
-are used to track motion. By storing the data in a CSV file, it becomes easy to analyze and plot
-the results in MATLAB. The Python code is designed to continuously collect data until the user
-stops the script, providing flexibility in the duration of the data collection.
-3. MATLAB Code: The MATLAB code processes the raw sensor data to estimate the object's
-position in 3D space. Here's a breakdown of the code's functionalities:
-o Data Import: The CSV file containing accelerometer and gyroscope data is read, and the
-respective columns are extracted.
-o Plotting: Separate plots for the accelerometer and gyroscope data are generated, allowing
-for visual inspection of the data over time
-o Sensor Fusion (AHRS Algorithm): The accelerometer and gyroscope data are processed
-using the AHRS algorithm to compute the orientation of the object. The data is used to
-compute the sensor’s rotation matrix, which helps translate sensor data to the Earth
-frame.
-o Tilt-Compensated Acceleration: The code calculates the tilt-compensated accelerometer
-readings, which account for changes in orientation, making the acceleration data more
-accurate.
-o Linear Acceleration, Velocity, and Position: The tilt-compensated accelerometer data is
-integrated to calculate linear velocity. After applying a high-pass filter to remove drift, the
-velocity data is integrated once again to compute the linear position of the object in space.
-o 3D Animation: A 3D animation is generated
+---
 
-![image](https://github.com/user-attachments/assets/d92c72cb-fc9f-4a85-b8c5-f899f78a1e2e)
+## 🚀 Implementation
+The project integrates **Arduino, Python, and MATLAB** for real-time 3D motion tracking. Below is an overview of each stage:
 
-![image](https://github.com/user-attachments/assets/e3f3c878-dcfe-463f-bdcf-d8f3d16c09f6)
+### 1️⃣ **Arduino Code**
+- The **Arduino** interfaces with the **MPU9250** to collect motion data.
+- Performs **sensor calibration** by applying offsets to raw accelerometer data.
+- Sends **adjusted accelerometer & gyroscope values** via **serial port**.
 
+**Arduino Code Example:**  
+![Arduino Code](https://github.com/user-attachments/assets/afaeff0e-e748-4c4c-ae5e-efe99eb0fa25)
 
+---
 
+### 2️⃣ **Python Code**
+- Reads real-time data from the **serial port**.
+- Stores sensor readings into a **CSV file** for further processing.
+- Enables **continuous data collection** until stopped.
 
+---
 
+### 3️⃣ **MATLAB Code**
+The **MATLAB script** processes raw sensor data to estimate the **3D position** of the object.
+
+#### 📌 Key Functionalities:
+✅ **Data Import** – Reads accelerometer and gyroscope data from the CSV file.  
+✅ **Plotting** – Generates separate plots for **accelerometer & gyroscope** readings.  
+✅ **Sensor Fusion (AHRS Algorithm)** – Computes orientation using accelerometer and gyroscope data.  
+✅ **Tilt-Compensated Acceleration** – Accounts for orientation changes for improved accuracy.  
+✅ **Linear Acceleration, Velocity & Position** – Uses **integration & high-pass filtering** to estimate the object's movement.  
+✅ **3D Animation** – A visual representation of the object’s real-time motion.  
+
+**MATLAB Visuals:**  
+![MATLAB Plot](https://github.com/user-attachments/assets/d92c72cb-fc9f-4a85-b8c5-f899f78a1e2e)  
+![3D Animation](https://github.com/user-attachments/assets/e3f3c878-dcfe-463f-bdcf-d8f3d16c09f6)
+
+---
+
+## 📂 **Project Structure**
