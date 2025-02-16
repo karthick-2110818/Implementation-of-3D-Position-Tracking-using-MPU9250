@@ -8,7 +8,7 @@ Key Features:
 Digital Motion Processor (DMP): On-chip algorithms process sensor data for features like sensor fusion, which simplifies obtaining orientation (pitch, roll, yaw).
 ![image](https://github.com/user-attachments/assets/fe995a2d-018e-439b-8422-4bd9270df85b)
 
-================================================================= Implemenation of Codes 
+Implemenation of Codes:
 
 The project implementation includes the use of Arduino, Python, and MATLAB for 3D position
 tracking using the MPU9250 sensor, processing its accelerometer, gyroscope, and magnetometer
@@ -49,7 +49,7 @@ o 3D Animation: A 3D animation is generated
 
 ![image](https://github.com/user-attachments/assets/e3f3c878-dcfe-463f-bdcf-d8f3d16c09f6)
 
-===========================================================================================================================================
+
 
 
 
